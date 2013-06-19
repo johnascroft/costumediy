@@ -85,7 +85,7 @@ function runFind() {
 				var tr = "";
 				for(var i = 0; i < json.length; i++) {			
 					//console.log(json[i].name);
-					tr = tr + '<tr><td>'+json[i].name+'</td></tr>';
+					tr = tr + '<tr><td>'+json[i].name+' <span>'+json[i].items_count+' items matched</span></td></tr>';
 				}
 				document.getElementById('results-list').innerHTML = tr;
 
@@ -150,7 +150,7 @@ function selectGarment(garment, garment_id) {
 
 function loadColours() {
 	db.transaction(function (tx) {
-		tx.executeSql('SELECT * FROM colours', [], function (tx, results) {			
+		tx.executeSql('SELECT * FROM colours ORDER BY title ASC', [], function (tx, results) {			
 			var len = results.rows.length, i;
 			var html = "";
 			for(i = 0; i < len; i++){
@@ -165,7 +165,7 @@ function loadColours() {
 
 function loadClothing() {
 	db.transaction(function (tx) {
-		tx.executeSql('SELECT * FROM garments', [], function (tx, results) {			
+		tx.executeSql('SELECT * FROM garments ORDER BY title ASC', [], function (tx, results) {			
 			var len = results.rows.length, i;
 			var html = "";
 			for(i = 0; i < len; i++){
@@ -179,15 +179,14 @@ function loadClothing() {
 function init() {
 	db.transaction(function (tx) {
 		tx.executeSql('DROP TABLE IF EXISTS garments');
-		tx.executeSql('CREATE TABLE garments (id INTEGER PRIMARY KEY ASC, title)');
+		tx.executeSql('CREATE TABLE garments (id INTEGER PRIMARY KEY, title)');
 	});
 	
 	load(domain + 'getGarments', function(xhr) { 
 		var json = JSON.parse(xhr.responseText);
 		db.transaction(function (tx) {
 			for(var i = 0; i < json.length; i++) {
-				title = json[i].title;
-				tx.executeSql('INSERT INTO garments (title) VALUES ("'+title+'")');
+				tx.executeSql('INSERT INTO garments (id, title) VALUES ("'+json[i].id+'", "'+json[i].title+'")');
 			}
 		});
 		loadClothing();		
@@ -195,14 +194,14 @@ function init() {
 	
 	db.transaction(function (tx) {
 		tx.executeSql('DROP TABLE IF EXISTS colours');
-		tx.executeSql('CREATE TABLE colours (id INTEGER PRIMARY KEY ASC, title, hex, image)');
+		tx.executeSql('CREATE TABLE colours (id INTEGER PRIMARY KEY, title, hex, image)');
 	});
 		
 	load(domain + 'getColours', function(xhr) { 
 		var json = JSON.parse(xhr.responseText);
 		db.transaction(function (tx) {
 			for(var i = 0; i < json.length; i++) {
-				tx.executeSql('INSERT INTO colours (title, hex) VALUES ("'+json[i].title+'", "'+json[i].hex+'")');
+				tx.executeSql('INSERT INTO colours (id, title, hex) VALUES ("'+json[i].id+'", "'+json[i].title+'", "'+json[i].hex+'")');
 			}
 		});
 		loadColours();

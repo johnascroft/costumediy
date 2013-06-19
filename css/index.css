@@ -48,6 +48,7 @@ table.list .delete-btn { width:28px; height:29px; display:block; }
 table.list .delete-btn img { width:28px; height:29px; }
 
 table#results-list td { height:30px; }
+table#results-list td span { font-size:10px; color:#EEE; text-transform:none; display:block; }
 
 ul.list { list-style:none; }
 ul.list li a { display:block; padding:5px 0; text-align:center; text-decoration:none; text-transform:uppercase; color:#456184; }
