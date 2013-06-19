@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.altadigital.costumediy" version="1.0.0">
+    <name>Costume DIY</name>
+    <description>Fancy dress costume finder</description>
+    <author href="https://www.altadigital.co.uk" email="john@altadigital.co.uk">Alta Digital</author>
+	<preference name="orientation" value="portrait" />
+	<preference name="prerendered-icon" value="true" />
+	<preference name="ios-statusbarstyle" value="black-opaque" />
+	<preference name="detect-data-types" value="false" />
+</widget>
