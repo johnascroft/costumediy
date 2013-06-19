@@ -77,7 +77,7 @@ function runFind() {
 			var g = garmentArray.join(",");
 			var queryString = 'c='+c+'&g='+g;
 			
-			load(domain + 'getCostumes/m?'+queryString, function(xhr) { 
+			load(domain + 'getCostumes/'+ localStorage.gender +'?'+queryString, function(xhr) { 
 				console.log('xhr read successfully');
 				
 				var json = JSON.parse(xhr.responseText);
@@ -87,6 +87,9 @@ function runFind() {
 					//console.log(json[i].name);
 					tr = tr + '<tr><td>'+json[i].name+' <span>'+json[i].items_count+' items matched</span></td></tr>';
 				}
+				
+				if(tr == "") tr = '<tr><td align="center" style="background:#f6d331;padding:20px 0;">Sorry, nothing found.<br/>Please try again.</td></tr>';
+				
 				document.getElementById('results-list').innerHTML = tr;
 
 				document.getElementById('loader').style.display = "none";

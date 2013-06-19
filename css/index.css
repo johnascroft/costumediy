@@ -37,9 +37,9 @@ header { height:223px; background:url(../images/home-bg.png) top center no-repea
 #results header { height:80px; background:#456184 url(../images/header-bar.png) bottom center no-repeat; background-size:320px 10px; position:relative; }
 
 #loader { margin:0 auto; display:block; padding:30px 0; }
-#startOver { background:red; display:block; text-align:center; margin:0 auto; color:#fff; padding:10px 0; text-decoration:none; }
+#startOver { position:fixed; bottom:0; background:#c34545; width:320px; display:block; text-align:center; margin:0 auto; font-size:21px; color:#fff; padding:15px 0; text-decoration:none; }
 
-#table-scroll { width:100%; clear:both; position:relative; top:15px; background:#456184; }
+#table-scroll { width:100%; clear:both; position:relative; top:15px; padding-bottom:45px; }
 table.list { border-collapse:collapse; width:100%; }
 table.list tr { background:#456184; }
 table.list td { vertical-align:middle; color:#FFF; text-transform:uppercase; padding:5px 0; padding-left:15px; height:45px; background:#456184; }
