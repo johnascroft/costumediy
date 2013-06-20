@@ -145,9 +145,25 @@ function selectColour(colour, colour_id) {
 function selectGarment(garment, garment_id) {
 	localStorage.garment = garment;
 	localStorage.garment_id = garment_id;
-	document.getElementById('colour').style.opacity = 1;
-	document.getElementById('clothing').style.opacity = opacity;
-	document.getElementById('pick').innerHTML = 'PLEASE CHOOSE THE COLOUR FOR YOUR '+garment;
+	
+	load(domain + 'getColoursBasedOnGarment/'+ localStorage.garment_id, function(xhr) { 
+		console.log('xhr read successfully');
+		
+		var json = JSON.parse(xhr.responseText);
+		var html = "";
+		for(var i = 0; i < json.length; i++) {			
+			if(json[i].hex == "000000") color = "FFFFFF";
+			else color = "000000";
+			
+			html = html + '<li><a href="" style="background:#'+json[i].hex+';color:#'+color+';" onclick="return selectColour(\''+json[i].title+'\', \''+json[i].id+'\');"><span>'+json[i].title+'</span></a></li>';
+		}
+		document.getElementById('colour-list').innerHTML = '<ul class="list">'+html+'</ul>';
+		
+		document.getElementById('colour').style.opacity = 1;
+		document.getElementById('clothing').style.opacity = opacity;
+		document.getElementById('pick').innerHTML = 'PLEASE CHOOSE THE COLOUR FOR YOUR '+garment;
+	});
+	
 	return false;
 }
 
