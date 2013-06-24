@@ -17,6 +17,8 @@
 	<div id="intro">ARE YOU LOOKING FOR A MALE OR A FEMALE COSTUME?</div>
 	<div id="male"><a href="" onclick="return openFind('m')"><img src="images/male.png" /></a> Male</div>
 	<div id="female"><a href="" onclick="return openFind('f')"><img src="images/female.png" /></a> Female</div>
+	
+	
 </div>
 <div id="find">
 	<header>
@@ -38,11 +40,12 @@
 		<img src="images/logo-find.png" id="logo-find" />
 	</header>
 	<div class="alert">HERE'S WHAT WE'VE COME UP WITH BASED ON YOUR SELECTIONS:</div>
-	<img src="images/loader.gif" id="loader" />
-	<div id="table-scroll">
-		<table class="list" id="results-list"><!-- POPULATED FROM JS --></table>
-	</div>
-	<a href="" id="startOver" onclick="return startOver();">START OVER</a>
+		
+	<ul class="list" id="results-list"><!-- POPULATED FROM JS --></ul>
+
+	<a href="" id="startOver" onclick="return startOver();"><img src="images/start-again-btn.png" /></a>
+	
+	
 </div>
 
 <div class="overlay" id="overlay-colour" onclick="closeOverlay()">
@@ -57,6 +60,18 @@
 		<div class="title">CHOOSE AN ITEM OF CLOTHING</div>
 		<div id="clothing-list"></div>
 	</div>
+</div>
+
+<div class="overlay full" id="overlay-character" onclick="closeOverlay()">
+	<div class="content">
+		<div id="character-title" class="title"></div>
+		<div id="garments-list"></div>
+	</div>
+</div>
+
+<div id="preloader">
+	<img src="images/preloader.gif" />
+	LOADING...
 </div>
 
 <script src="js/index.js" type="text/javascript"></script>
