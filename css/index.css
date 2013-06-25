@@ -84,6 +84,8 @@ ul.list li a span { padding:0 5px; }
 .overlay.full{ display:none; background:#FFFFFF; padding:0; width:320px; height:100%; position:absolute; top:0; left:50%; margin-left:-160px; }
 .overlay.full .content { padding:20px; margin:0; }
 
+#character-image { padding-bottom:20px; display:block; margin:0 auto; }
+
 .overlay { display:none; background:url(../images/overlay.png); padding:0; width:320px; height:100%; position:absolute; top:0; left:50%; margin-left:-160px; }
 .overlay .content { background:#fff; margin:30px 30px 0 30px; padding:20px; -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px; }
 .overlay .content .title { font-size:15px; text-transform:uppercase; color:#456184; text-align:center; padding-bottom:20px; }

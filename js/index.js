@@ -33,18 +33,33 @@ function openOverlay(id) {
 	return false;
 }
 
+function openColour() {
+	if (localStorage.getItem("garment") !== null) {
+		document.getElementById("overlay-colour").style.display = "block";
+	}
+	return false;
+}
+
 function expandCharacter(id) {
 	showPreloader();
 	load(domain + 'getCharacter/'+ id, function(xhr) {		
 		var json = JSON.parse(xhr.responseText);
 		console.log(json);
 		document.getElementById("character-title").innerHTML = json.name;
+		
+		var objImage = document.getElementById("character-image");
+		if(json.image != '') {
+			objImage.src = domain + "public/images/characters/" + json.image;
+			objImage.style.display = "block";
+		} else {
+			objImage.style.display = "none";
+		}
+		
 		var html = "";
 		for(var i = 0; i < json.costumes.length; i++) {		
 			html = html + "<li><span class=\"line\"></span><span>" + json.costumes[i].colour_title + " " + json.costumes[i].garment_title + "</span></li>";
 		}
 		document.getElementById('garments-list').innerHTML = '<ul class="notepad-list">'+html+'</ul>';
-		document.getElementById('garments-list').innerHTML = document.getElementById('garments-list').innerHTML + '<ul class="notepad-list green">'+html+'</ul>';
 		document.getElementById("overlay-character").style.display = "block";
 		hidePreloader();
 	});
@@ -169,6 +184,10 @@ function selectColour(colour, colour_id) {
 	document.getElementById('colour').style.opacity = opacity;
 	document.getElementById('pick').innerHTML = 'ADD SOME MORE - THE MORE YOU ADD, THE EASIER IT GETS!';
 	document.getElementById('find-btn').style.display = 'block';
+	
+	localStorage.removeItem("garment");
+	localStorage.removeItem("garment_id");
+	
 	readRows();
 	return false;
 }

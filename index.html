@@ -27,7 +27,7 @@
 	</header>
 	<div class="alert" id="pick">FIRSTLY, PLEASE TAP "CLOTHING" AND PICK A GARMENT YOU HAVE:</div>
 	<div id="clothing"><a href="" onclick="return openOverlay('clothing')"><img src="images/clothing.png" /></a> Clothing</div>
-	<div id="colour"><a href="" onclick="return openOverlay('colour')"><img src="images/colour.png" /></a> Colour</div>
+	<div id="colour"><a href="" onclick="return openColour()"><img src="images/colour.png" /></a> Colour</div>
 	
 	<div id="table-scroll">
 		<table class="list" id="list"><!-- POPULATED FROM JS --></table>
@@ -65,6 +65,7 @@
 <div class="overlay full" id="overlay-character" onclick="closeOverlay()">
 	<div class="content">
 		<div id="character-title" class="title"></div>
+		<img id="character-image" src="" />
 		<div id="garments-list"></div>
 	</div>
 </div>
