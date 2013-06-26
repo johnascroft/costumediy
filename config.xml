@@ -15,19 +15,17 @@
     <preference name="ios-statusbarstyle" value="black-opaque"/>
     <preference name="detect-data-types" value="false"/>
 
-    <!-- Default -->
-    <icon src="icons/icon.png"/>
+    <!-- Default - this needs to be in the root directory -->
+    <icon src="icon.png"/>
 
     <!-- iOS -->
     <icon src="icons/ios/icon-57.png" gap:platform="ios" width="57" height="57"/>
     <icon src="icons/ios/icon-72.png" gap:platform="ios" width="72" height="72"/>
     <icon src="icons/ios/icon-57-2x.png" gap:platform="ios" width="114" height="114"/>
-    <gap:splash src="icons/ios/screen-iphone-portrait.png" gap:platform="ios" width="320" height="480" />
-    <gap:splash src="icons/ios/screen-iphone-portrait-2x.png" gap:platform="ios" width="640" height="960" />
-    <gap:splash src="icons/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios" width="640" height="1136" />
-
-    <!-- retina iPad support: PhoneGap 2.5.0+ only -->
     <icon src="icons/ios/icon-72-2x.png" gap:platform="ios" width="144" height="144"/>
+    <gap:splash src="icons/ios/screen-iphone-portrait.png" gap:platform="ios" width="320" height="480"/>
+    <gap:splash src="icons/ios/screen-iphone-portrait-2x.png" gap:platform="ios" width="640" height="960"/>
+    <gap:splash src="icons/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios" width="640" height="1136"/>
 
     <!-- Android -->
     <icon src="icons/android/icon-36-ldpi.png" gap:platform="android" gap:density="ldpi"/>
