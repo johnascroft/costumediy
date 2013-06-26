@@ -56,9 +56,11 @@ function expandCharacter(id) {
 		}
 		
 		var html = "";
-		for(var i = 0; i < json.costumes.length; i++) {		
-			html = html + "<li><span class=\"line\"></span><span>" + json.costumes[i].colour_title + " " + json.costumes[i].garment_title + "</span></li>";
+		var className = "";
+		for(var i = 0; i < json.costumes.length; i++) {
+			html = html + "<li><span class='"+ className +"'>" + json.costumes[i].colour_title + " " + json.costumes[i].garment_title + "</span></li>";
 		}
+		
 		document.getElementById('garments-list').innerHTML = '<ul class="notepad-list">'+html+'</ul>';
 		document.getElementById("overlay-character").style.display = "block";
 		hidePreloader();

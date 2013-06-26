@@ -76,10 +76,10 @@ ul.list li a span { padding:0 5px; }
 .alert { font-size:15px; text-transform:uppercase; color:#456184; margin:0 25px; text-align:center; padding:15px 0; }
 
 .notepad-list { background-color: #f5f5f5; }
-.notepad-list li { font-size:14px; text-transform:uppercase; list-style:none; border-bottom:1px dotted #ccc; text-indent:15px; height:auto; padding:0 10px; }
-.notepad-list li span { display:block; padding:10px 0; line-height:22px; height:22px; }
-.notepad-list li span.line { border-left:1px solid #ffaa9f; border-right:1px solid #ffaa9f; width:2px; float:left; margin-left:10px; }
-.notepad-list.green li span.line { border-left:1px solid #009c07; border-right:1px solid #009c07; }
+.notepad-list li { font-size:14px; background:url(../images/line.png) 40px top repeat-y; text-transform:uppercase; list-style:none; border-bottom:1px dotted #ccc; text-indent:15px; height:auto; padding-right:20px; }
+.notepad-list li:last-child { border-bottom:none; }
+.notepad-list li span { display:block; padding:10px 0; line-height:15px; padding-left:60px; text-indent:0; }
+.notepad-list li span.tick { background:url(../images/tick.png) 8px center no-repeat; background-size:25px 25px; }
 
 .overlay.full{ display:none; background:#FFFFFF; padding:0; width:320px; height:100%; position:absolute; top:0; left:50%; margin-left:-160px; }
 .overlay.full .content { padding:20px; margin:0; }
