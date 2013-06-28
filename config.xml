@@ -5,6 +5,7 @@
     <description>Out of fancy dress costume ideas? Tired of paying the earth for an off-the-shelf outfit? Find yourself a fancy dress costume - the easy way!</description>
     <author href="https://www.altadigital.co.uk" email="john@altadigital.co.uk">Alta Digital</author>
 
+	<preference name="phonegap-version" value="2.9.0" />
     <preference name="orientation" value="portrait"/>
     <preference name="prerendered-icon" value="true"/>
     <preference name="ios-statusbarstyle" value="black-opaque"/>
