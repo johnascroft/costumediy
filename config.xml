@@ -2,9 +2,7 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.altadigital.costumediy"
         version="1.0.0">
     <name>Costume DIY</name>
-    <description>Out of fancy dress costume ideas? Tired of paying the earth for an off-the-shelf outfit? Find yourself
-        a fancy dress costume - the easy way!
-    </description>
+    <description>Out of fancy dress costume ideas? Tired of paying the earth for an off-the-shelf outfit? Find yourself a fancy dress costume - the easy way!</description>
     <author href="https://www.altadigital.co.uk" email="john@altadigital.co.uk">Alta Digital</author>
 
     <preference name="orientation" value="portrait"/>
