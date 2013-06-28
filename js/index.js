@@ -37,6 +37,7 @@ function openColour() {
 	if (localStorage.getItem("garment") !== null) {
 		document.getElementById("overlay-colour").style.display = "block";
 	}
+	window.scrollTo(0,0);
 	return false;
 }
 
@@ -44,7 +45,7 @@ function expandCharacter(id) {
 	showPreloader();
 	load(domain + 'getCharacter/'+ id, function(xhr) {		
 		var json = JSON.parse(xhr.responseText);
-		console.log(json);
+        //console.log(json);
 		document.getElementById("character-title").innerHTML = json.name;
 		
 		var objImage = document.getElementById("character-image");
@@ -54,14 +55,26 @@ function expandCharacter(id) {
 		} else {
 			objImage.style.display = "none";
 		}
-		
+
 		var html = "";
-		var className = "";
 		for(var i = 0; i < json.costumes.length; i++) {
-			html = html + "<li><span class='"+ className +"'>" + json.costumes[i].colour_title + " " + json.costumes[i].garment_title + "</span></li>";
+            html = html + "<li><span id='row_"+ json.costumes[i].colour_id +"_"+ json.costumes[i].garment_id+ "'>" + json.costumes[i].colour_title + " " + json.costumes[i].garment_title + "</span></li>";
 		}
-		
-		document.getElementById('garments-list').innerHTML = '<ul class="notepad-list">'+html+'</ul>';
+        document.getElementById('garments-list').innerHTML = '<ul class="notepad-list">'+html+'</ul>';
+
+        db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM rows', [], function (tx, results) {
+                for(i = 0; i < results.rows.length; i++){
+                    var row = results.rows.item(i);
+                    var rowID = "row_"+row['colour_id']+"_"+row['garment_id'];
+                    console.log("row_"+row['colour_id']+"_"+row['garment_id']);
+                    if(document.getElementById(rowID)) {
+                        document.getElementById(rowID).className = "tick";
+                    }
+                }
+            }, null);
+        });
+
 		document.getElementById("overlay-character").style.display = "block";
 		hidePreloader();
 	});
@@ -115,11 +128,11 @@ function runFind() {
 	db.transaction(function (tx) {
 		tx.executeSql('SELECT * FROM rows', [], function (tx, results) {			
 			for(i = 0; i < results.rows.length; i++){	
-				console.log('COLOUR ID: '+results.rows.item(i).colour_id);
+				//console.log('COLOUR ID: '+results.rows.item(i).colour_id);
 				colourArray.push(results.rows.item(i).colour_id);
 				garmentArray.push(results.rows.item(i).garment_id);
 			}
-			console.log('ARRAY: '+colourArray);
+			//console.log('ARRAY: '+colourArray);
 			var c = colourArray.join(",");
 			
 			var g = garmentArray.join(",");
@@ -128,8 +141,16 @@ function runFind() {
 			load(domain + 'getCostumes/'+ localStorage.gender +'?'+queryString, function(xhr) {		
 				var json = JSON.parse(xhr.responseText);
 				var row = "";
-				for(var i = 0; i < json.length; i++) {		
-					row = row + '<li>';
+				for(var i = 0; i < json.length; i++) {
+					var css = "";
+					if(json[i].items_count >= 3) {
+						//css = 'style="background:#e67c00;"';
+					}
+					if(json[i].items_count >= 2) {
+						//css = 'style="background:#eeb545;"';
+					}
+				
+					row = row + '<li '+css+'>';
 					row = row + '<a href="" onclick="return expandCharacter('+json[i].id+');"><img src="images/expand.png" class="expand" />';
 					row = row + json[i].name;
 					row = row +	'<span>'+json[i].items_count+' items matched</span>';
@@ -151,7 +172,7 @@ function runFind() {
 }
 
 function deleteRow(id) {
-	console.log(id);
+	//console.log(id);
 	db.transaction(function (tx) {
 		tx.executeSql("DELETE FROM rows WHERE id = ?", [id]);
 	});
@@ -163,12 +184,12 @@ function readRows() {
 	db.transaction(function (tx) {
 		tx.executeSql('SELECT * FROM rows', [], function (tx, results) {			
 			var len = results.rows.length, i;
-			console.log(len);
+			//console.log(len);
 			var tr = "";
 			document.getElementById('list').innerHTML = tr;
-			console.log('done');
+			//console.log('done');
 			for(i = 0; i < len; i++){
-				console.log(results.rows.item(i));
+				//console.log(results.rows.item(i));
 				tr = tr + '<tr><td>'+results.rows.item(i).colour+' '+results.rows.item(i).garment+'</td><td width="50" align="center" valign="middle"><a href="" onclick="return deleteRow('+results.rows.item(i).id+');" class="delete-btn"><img src="images/delete.png" /></a></td></tr>';
 				document.getElementById('list').innerHTML = tr;
 			}
@@ -191,6 +212,8 @@ function selectColour(colour, colour_id) {
 	localStorage.removeItem("garment_id");
 	
 	readRows();
+	
+	window.scrollTo(0,0);
 	return false;
 }
 
@@ -200,8 +223,8 @@ function selectGarment(garment, garment_id) {
 	localStorage.garment = garment;
 	localStorage.garment_id = garment_id;
 	
-	load(domain + 'getColoursBasedOnGarment/'+ localStorage.garment_id, function(xhr) { 
-		console.log('xhr read successfully');
+	load(domain + 'getColoursBasedOnGarment/'+ localStorage.gender +'/'+ localStorage.garment_id, function(xhr) { 
+		//console.log('xhr read successfully');
 		
 		var json = JSON.parse(xhr.responseText);
 		var html = "";
@@ -299,8 +322,8 @@ function init() {
 
 window.onload = function(){	
 	init();
-	
-	//localStorage.clear();
+
+    //localStorage.clear();
 	
 	document.getElementById('colour').style.opacity = opacity;
 }

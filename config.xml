@@ -16,17 +16,17 @@
     <icon src="icon.png"/>
 
     <!-- iOS -->
-    <icon src="icons/ios/icon-57.png" gap:platform="ios" width="57" height="57"/>
-    <icon src="icons/ios/icon-72.png" gap:platform="ios" width="72" height="72"/>
-    <icon src="icons/ios/icon-57-2x.png" gap:platform="ios" width="114" height="114"/>
-    <icon src="icons/ios/icon-72-2x.png" gap:platform="ios" width="144" height="144"/>
-    <gap:splash src="icons/ios/screen-iphone-portrait.png" gap:platform="ios" width="320" height="480"/>
-    <gap:splash src="icons/ios/screen-iphone-portrait-2x.png" gap:platform="ios" width="640" height="960"/>
-    <gap:splash src="icons/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios" width="640" height="1136"/>
+    <icon src="images/icons/ios/icon-57.png" gap:platform="ios" width="57" height="57"/>
+    <icon src="images/icons/ios/icon-72.png" gap:platform="ios" width="72" height="72"/>
+    <icon src="images/icons/ios/icon-57-2x.png" gap:platform="ios" width="114" height="114"/>
+    <icon src="images/icons/ios/icon-72-2x.png" gap:platform="ios" width="144" height="144"/>
+    <gap:splash src="images/icons/ios/screen-iphone-portrait.png" gap:platform="ios" width="320" height="480"/>
+    <gap:splash src="images/icons/ios/screen-iphone-portrait-2x.png" gap:platform="ios" width="640" height="960"/>
+    <gap:splash src="images/icons/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios" width="640" height="1136"/>
 
     <!-- Android -->
-    <icon src="icons/android/icon-36-ldpi.png" gap:platform="android" gap:density="ldpi"/>
-    <icon src="icons/android/icon-48-mdpi.png" gap:platform="android" gap:density="mdpi"/>
-    <icon src="icons/android/icon-72-hdpi.png" gap:platform="android" gap:density="hdpi"/>
-    <icon src="icons/android/icon-96-xhdpi.png" gap:platform="android" gap:density="xhdpi"/>
+    <icon src="images/icons/android/icon-36-ldpi.png" gap:platform="android" gap:density="ldpi"/>
+    <icon src="images/icons/android/icon-48-mdpi.png" gap:platform="android" gap:density="mdpi"/>
+    <icon src="images/icons/android/icon-72-hdpi.png" gap:platform="android" gap:density="hdpi"/>
+    <icon src="images/icons/android/icon-96-xhdpi.png" gap:platform="android" gap:density="xhdpi"/>
 </widget>
