@@ -14,6 +14,11 @@
     <!-- Default - this needs to be in the root directory -->
     <icon src="icon.png"/>
 
+	<gap:plugin name="FacebookConnect">
+		<param name="APP_ID" value="521128241275977" />
+		<param name="APP_NAME" value="Costume DIY" />
+	</gap:plugin>
+	
     <!-- iOS -->
     <icon src="images/icons/ios/icon-57.png" gap:platform="ios" width="57" height="57"/>
     <icon src="images/icons/ios/icon-72.png" gap:platform="ios" width="72" height="72"/>

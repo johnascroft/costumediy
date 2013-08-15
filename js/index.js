@@ -2,6 +2,14 @@ var db = openDatabase('costumediy', '1.0', 'Costume DIY', 2 * 1024 * 1024);
 var domain = "http://www.costumediy.com/server/";
 var opacity = 0.2;
 
+$('a').on('touchstart', function(e){
+    $(this).addClass('tap');
+});
+
+$('a').on('touchend', function(e){
+    $(this).removeClass('tap');
+});
+
 function showPreloader() {
 	document.getElementById("preloader").style.display = "block";
 }
