@@ -59,7 +59,7 @@ function expandCharacter(id) {
 		var objImage = document.getElementById("character-image");
 		if(json.image != '') {
 			objImage.src = domain + "public/images/characters/" + json.image;
-			objImage.style.display = "block";
+			objImage.style.display = "none";
 		} else {
 			objImage.style.display = "none";
 		}
