@@ -2,7 +2,7 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.altadigital.costumediy"
         version="1.0.0">
     <name>Costume DIY</name>
-    <description>Out of fancy dress costume ideas? Tired of paying the earth for an off-the-shelf outfit? Find yourself a fancy dress costume - the easy way!</description>
+    <description>Out of fancy dress costume ideas? Tired of spending a fortune on an off-the-shelf outfit? Find yourself a fancy dress costume - the easy way!</description>
     <author href="https://www.altadigital.co.uk" email="john@altadigital.co.uk">Alta Digital</author>
 
 	<preference name="phonegap-version" value="2.9.0" />
@@ -13,11 +13,6 @@
 
     <!-- Default - this needs to be in the root directory -->
     <icon src="icon.png"/>
-
-	<gap:plugin name="FacebookConnect">
-		<param name="APP_ID" value="521128241275977" />
-		<param name="APP_NAME" value="Costume DIY" />
-	</gap:plugin>
 	
     <!-- iOS -->
     <icon src="images/icons/ios/icon-57.png" gap:platform="ios" width="57" height="57"/>
