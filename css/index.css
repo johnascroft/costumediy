@@ -26,7 +26,7 @@ a.tap { -webkit-filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5)); filter: dr
 #female img { width:100%; height:87px; }
 
 #find { display:none; width:320px; position:fixed; left:50%; margin-left:-160px; height:100%; top:80px; background:#FFF; background:url(../images/bg.png); }
-#find header { height:80px; width:320px; top:0; left:50%; margin-left:-160px; background:#456184 url(../images/header-bar.png) bottom center no-repeat; background-size:320px 10px; position:fixed; }
+#find header { height:80px; z-index:99; width:320px; top:0; left:50%; margin-left:-160px; background:#456184 url(../images/header-bar.png) bottom center no-repeat; background-size:320px 10px; position:fixed; }
 #back-btn img { height:41px; width:41px; padding:15px; top:0; left:0; position:absolute; }
 #logo-find { margin:0 auto; display:block; height:50px; width:110px; left:50%; margin-left:-55px; top:15px; position:absolute; }
 #clothing { float:left; margin-left:50px; width:87px; text-align:center; font-size:12px; text-transform:uppercase; color:#456184; }
@@ -55,7 +55,7 @@ border:1px solid #fff;
 	background-size: 100px 100px;
 }
 
-#table-scroll { width:100%; clear:both; position:relative; top:15px; padding-bottom:45px; }
+#table-scroll { width:100%; clear:both; position:relative; top:15px; padding-bottom:20px; }
 table.list { border-collapse:collapse; width:100%; }
 table.list tr { background:#456184; }
 table.list td { vertical-align:middle; color:#FFF; text-transform:uppercase; padding:5px 0; padding-left:15px; height:45px; background:#456184; }
@@ -89,7 +89,7 @@ ul.list li a span { padding:0 5px; }
 
 #character-image { display:block; margin:0 auto 20px auto; width:220px; border-radius:5px; }
 
-.overlay { display:none; padding:0; width:320px; padding-bottom:30px; position:absolute; top:0; left:50%; margin-left:-160px; }
+.overlay { z-index:999; display:none; padding:0; width:320px; padding-bottom:30px; position:absolute; top:0; left:50%; margin-left:-160px; }
 .overlay .content { background:#fff; margin:30px 30px 0 30px; padding:20px; -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px; 
 -moz-box-shadow: 0 0 10px 10px rgba(0,0,0,0.3);
 -webkit-box-shadow: 0 0 10px 10px rgba(0,0,0,0.3);
