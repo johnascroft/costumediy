@@ -59,7 +59,7 @@ function expandCharacter(id) {
 		var objImage = document.getElementById("character-image");
 		if(json.image != '') {
 			objImage.src = domain + "public/images/characters/" + json.image;
-			objImage.style.display = "none";
+			objImage.style.display = "block";
 		} else {
 			objImage.style.display = "none";
 		}
@@ -95,6 +95,7 @@ function closeOverlay() {
 		var item = objects[i];  
 		item.style.display = 'none';
 	}
+	return false;
 }
 
 function startOver() {
