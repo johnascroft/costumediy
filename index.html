@@ -63,26 +63,14 @@
     </div>
 </div>
 
-<div class="overlay" id="overlay-character" onclick="closeOverlay()">
+<div class="overlay" id="overlay-character">
     <div class="content" style="padding:20px 0; background:#f5f5f5;">
         <div id="character-title" class="title"></div>
         <img id="character-image" src="" />
 		<p style="font-size:11px;">Here's what you'll need for this character. We've ticked the items you've already got.</p>
 
         <div id="garments-list"></div>
-		<a class="big-btn facebook" href="#" onclick="return false;">Share to Facebook</a>
-		
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=521128241275977";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-		
-		<div class="fb-like" data-href="https://www.facebook.com/CostumeDIY" data-width="200" data-layout="button_count" data-show-faces="false" data-send="false"></div>
-		
+		<a class="big-btn facebook" target="_blank" href="https://www.facebook.com/CostumeDIY">Like us on Facebook</a>
 		<a class="big-btn" href="#" onclick="return closeOverlay();">Tap to close</a>
     </div>
 </div>
