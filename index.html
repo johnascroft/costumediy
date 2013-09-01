@@ -71,6 +71,18 @@
 
         <div id="garments-list"></div>
 		<a class="big-btn facebook" href="#" onclick="return false;">Share to Facebook</a>
+		
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=521128241275977";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		
+		<div class="fb-like" data-href="https://www.facebook.com/CostumeDIY" data-width="200" data-layout="button_count" data-show-faces="false" data-send="false"></div>
+		
 		<a class="big-btn" href="#" onclick="return closeOverlay();">Tap to close</a>
     </div>
 </div>
