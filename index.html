@@ -8,6 +8,10 @@
     <link rel="apple-touch-icon" href="images/iphone/appicon.png"/>
 </head>
 <body>
+
+<!-- This initializes the Facebook JS SDK. -->
+<div id="fb-root"></div>
+
 <div id="index">
     <header>
         <img src="images/logo.png" id="logo"/>
@@ -70,6 +74,7 @@
 		<p style="font-size:11px;">Here's what you'll need for this character. We've ticked the items you've already got.</p>
 
         <div id="garments-list"></div>
+		<fb:like url="https://www.facebook.com/CostumeDIY" width="275"></fb:like>
 		<a class="big-btn facebook" onclick="window.open(this.href, '_system'); return false;" href="https://www.facebook.com/CostumeDIY">Like us on Facebook</a>
 		<a class="big-btn" href="#" onclick="return closeOverlay();">Tap to close</a>
     </div>
@@ -82,5 +87,21 @@
 
 <script src="js/zepto.min.js" type="text/javascript"></script>
 <script src="js/index.js" type="text/javascript"></script>
+
+<script src="cordova.js"></script>
+<script src="cdv-plugin-fb-connect.js"></script>
+<script src="facebook-js-sdk.js"></script> 
+
+<script>
+  // Initialize the Facebook SDK
+  document.addEventListener('deviceready', function() {
+	  FB.init({
+		  appId: '521128241275977',
+		  nativeInterface: CDV.FB,
+		  useCachedDialogs: false
+	  });
+  });
+</script>
+
 </body>
 </html>
