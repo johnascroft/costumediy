@@ -23,6 +23,7 @@
 	-->
 	
 	<gap:plugin name="com.phonegap.plugins.childbrowser" />
+	<access origin="*" />
 	
     <preference name="detect-data-types" value="false"/>
     <preference name="fullscreen" value="true" />
