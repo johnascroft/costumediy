@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.altadigital.costumediy"
-        version="1.0.0">
+        version="1.1.0">
     <name>Costume DIY</name>
     <description>Out of fancy dress costume ideas? Tired of spending a fortune on an off-the-shelf outfit? Find yourself a fancy dress costume - the easy way!</description>
     <author href="https://www.altadigital.co.uk" email="john@altadigital.co.uk">Alta Digital</author>
