@@ -22,10 +22,7 @@
 	<feature name="http://api.phonegap.com/1.0/notification"/>
 	-->
 	
-	<gap:plugin name="com.phonegap.plugins.facebookconnect">
-		<param name="APP_ID" value="521128241275977" />
-		<param name="APP_NAME" value="Costume DIY" />
-	</gap:plugin>
+	<gap:plugin name="com.phonegap.plugins.childbrowser" />
 	
     <preference name="detect-data-types" value="false"/>
     <preference name="fullscreen" value="true" />
