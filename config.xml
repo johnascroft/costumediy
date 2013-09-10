@@ -26,7 +26,7 @@
     <preference name="fullscreen" value="true" />
     <preference name="ios-statusbarstyle" value="black-opaque"/>
     <preference name="orientation" value="portrait"/>
-	<preference name="phonegap-version" value="2.9.0" />
+	<preference name="phonegap-version" value="3.0.0" />
     <preference name="prerendered-icon" value="true"/>
     <preference name="webviewbounce" value="false" />
 	<preference name="stay-in-webview" value="false" />
