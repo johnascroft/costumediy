@@ -31,7 +31,7 @@
     <preference name="webviewbounce" value="false" />
 	<preference name="stay-in-webview" value="false" />
 	
-	<plugin name="InAppBrowser" value="CDVInAppBrowser" />
+	<plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
 	
     <!-- Default - this needs to be in the root directory -->
     <icon src="icon.png"/>
