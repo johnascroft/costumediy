@@ -39,7 +39,7 @@
 		</div>
 	</div>
 
-    <a href="" onclick="return runFind();" id="find-btn">FIND</a>
+    <a href="" onclick="return runFind();" id="find-btn"><span>Find</span></a>
 </div>
 <div id="results">
     <header>
@@ -51,7 +51,7 @@
 		<ul class="list" id="results-list"><!-- POPULATED FROM JS --></ul>
 	</div>
 	
-	<a href="" id="startOver" onclick="return startOver();">Start Again</a>
+	<a href="" id="startOver" onclick="return startOver();"><span>Start Again</span></a>
 </div>
 
 <div class="overlay" id="overlay-colour" onclick="closeOverlay()">
@@ -72,11 +72,11 @@
     <div class="content" style="padding:20px 0; background:#f5f5f5;">
         <div id="character-title" class="title"></div>
         <img id="character-image" src="" />
-		<p style="font-size:11px;">Here's what you'll need for this character. We've ticked the items you've already got.</p>
+		<p>Here's what you'll need. We've ticked the items you've already got.</p>
 
         <div id="garments-list"></div>
-		<a class="big-btn facebook" href="#" onclick="openFacebook();">Like us on Facebook</a>
-		<a class="big-btn" href="#" onclick="return closeOverlay();">Tap to close</a>
+		<a class="big-btn facebook" href="" onclick="return openFacebook();"><span>Like us on Facebook</span></a>
+		<a class="big-btn" href="" onclick="return closeOverlay();">Tap to close</a>
     </div>
 </div>
 
@@ -92,6 +92,7 @@
 <script>
 function openFacebook() {
 	var ref = window.open('http://www.facebook.com/CostumeDIY', '_blank', 'location=no,closebuttoncaption=Close');
+	return false;
 }
 </script>
 
